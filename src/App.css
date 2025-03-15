@@ -144,7 +144,7 @@
 
 /* Compression summary box */
 .summary-container {
-  width: 100%;
+  max-width: 100%;
   background-color: #eff6ff;
   border: 1px solid #dbeafe;
   padding: 1rem;
