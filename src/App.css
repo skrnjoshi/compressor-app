@@ -1,38 +1,190 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Main container styles */
+.image-compressor-container {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, sans-serif;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  color: #1f2937;
+  background-color: #f9fafb;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* Header styles */
+.compressor-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #111827;
+}
+
+/* Upload section */
+.upload-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.file-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.quality-slider {
+  width: 100%;
+  margin: 0.5rem 0;
+  accent-color: #2563eb;
+}
+
+.compress-button {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  background-color: #2563eb;
   color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.compress-button:hover {
+  background-color: #1d4ed8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.compress-button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+/* Image comparison grid */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Image panels */
+.image-panel {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+}
+
+.panel-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.size-info {
+  color: #4b5563;
+  margin-bottom: 0.5rem;
+}
+
+.reduction-indicator {
+  color: #059669;
+  font-weight: 500;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f3f4f6;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+.preview-image {
+  max-height: 16rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.download-button {
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background-color: #059669;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.download-button:hover {
+  background-color: #047857;
+}
+
+/* Compression summary box */
+.summary-container {
+  width: 100%;
+  background-color: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 1rem;
+  border-radius: 0.375rem;
+}
+
+.summary-title {
+  font-weight: 500;
+  color: #1e40af;
+  margin-bottom: 0.5rem;
+}
+
+.summary-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Animation for loading state */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
